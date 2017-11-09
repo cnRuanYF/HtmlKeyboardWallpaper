@@ -1,7 +1,7 @@
 # HtmlKeyboardWallpaper
 使用HTML+CSS编写的安妮Pro键盘键位图
 
-想不到在Github的第一个Repository竟然是这种无聊的东西
+想不到在Github的第一次竟然是这种无聊的东西
 
 那么…
 <br>
@@ -16,3 +16,4 @@
 代码狗的事情当然是用代码解决
 
 （为了方便，Html中全是自定义标签，不可取不可取）
+ 
