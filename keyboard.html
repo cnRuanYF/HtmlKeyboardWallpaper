@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--
+ ____                     __   __ _____ 
+|  _ \  _   _   __ _  _ __\ \ / /|  ___|
+| |_) || | | | / _` || '_ \\ V / | |_   
+|  _ < | |_| || (_| || | | || |  |  _|  
+|_| \_\ \__,_| \__,_||_| |_||_|  |_|    
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Keyboard</title>
+		<style>
+			*{
+				--areasize: 64px;
+				--keymargin: 8px;
+			}
+			body{
+				background: #000;
+				color: #FFF;
+				text-align: center;
+				font-family: "微软雅黑";
+				overflow: hidden;
+			}
+			keyboard{
+				margin: auto;
+				margin-top: 320px;
+				padding: 8px;
+				width: calc(var(--areasize) * 15);
+				border-radius: 8px;
+				box-shadow: 0 0 8px #888 inset;
+				display: block;
+				overflow: hidden;
+				transform: rotate(-10deg) scale(2);
+			}
+			keyarea{
+				--widx: 1;
+				float: left;
+				width: calc(var(--areasize) * var(--widx));
+				height: var(--areasize);
+			}
+			keyarea.x125{
+				--widx: 1.25;
+			}
+			keyarea.x15{
+				--widx: 1.5;
+			}
+			keyarea.x175{
+				--widx: 1.75;
+			}
+			keyarea.x2{
+				--widx: 2;
+			}
+			keyarea.x225{
+				--widx: 2.25;
+			}
+			keyarea.x275{
+				--widx: 2.75;
+			}
+			keyarea.space{
+				--widx: 6.25;
+			}
+			key{
+				--bcolor: #666;
+				float: left;
+				position: relative;
+				top: calc(var(--keymargin) / 2 - 1px);
+				left: calc(var(--keymargin) / 2 - 1px);
+				width: calc(100% - var(--keymargin));
+				height: calc(var(--areasize) - var(--keymargin));
+				border: 1px solid var(--bcolor);
+				border-radius: 4px;
+				box-shadow: 0 0 4px var(--bcolor) inset;
+				transition: all 250ms;
+				cursor: pointer;
+			}
+			key:hover{
+				background: #222;
+				box-shadow: 0 0 16px var(--bcolor) inset;
+			}
+			key.r{
+				--bcolor: #F66;
+			}
+			key.g{
+				--bcolor: #0A0;
+			}
+			key.b{
+				--bcolor: #48F;
+			}
+			key.y{
+				--bcolor: #BB0;
+			}
+			key > kt{
+				position: relative;
+				display: block;
+				top: 8px;
+				color: #CCC;
+			}
+			key > fn{
+				float: right;
+				position: relative;
+				top: 16px;
+				right: 4px;
+				font-size: 10px;
+				color: #666;
+			}
+			screwarea{
+				float: left;
+				width: 0;
+			}
+			screw{
+				--screwRad: 12px;
+				display: block;
+				width: var(--screwRad);
+				height: var(--screwRad);
+				border-radius: calc(var(--screwRad) / 2);
+				box-shadow: 0 0 calc(var(--screwRad) / 2) #F0F inset;
+				position:relative;
+			}
+			screw.tab-q{
+				left: calc(var(--screwRad) * -1.5);
+				top: calc(var(--screwRad) * -0.5 + var(--areasize) / 2);
+			}
+			screw.rightbracket-backslash{
+				left: calc(var(--screwRad) * 0.5);
+				top: calc(var(--screwRad) * -0.5 + var(--areasize) / 2);
+			}
+			screw.y-h{
+				left: calc(var(--screwRad) * 1.5);
+				top: calc(var(--screwRad) * -0.5);
+			}
+			screw.rightshift{
+				left: calc(var(--screwRad) * 0.5);
+				top: calc(var(--screwRad) * -1.2 + var(--areasize));
+			}
+			screw.space{
+				left: calc(var(--screwRad) * 0.2);
+				top: calc(var(--screwRad) * 0.2);
+			}
+		</style>
+	</head>
+	<body>
+		<keyboard>
+			<keyarea><key class="r"><kt>Esc</kt><fn>` ~</fn></key></keyarea>
+			<keyarea><key><kt>1 !</kt><fn>F1</fn></key></keyarea>
+			<keyarea><key><kt>2 @</kt><fn>F2</fn></key></keyarea>
+			<keyarea><key><kt>3 #</kt><fn>F3</fn></key></keyarea>
+			<keyarea><key><kt>4 $</kt><fn>F4</fn></key></keyarea>
+			<keyarea><key><kt>5 %</kt><fn>F5</fn></key></keyarea>
+			<keyarea><key><kt>6 ^</kt><fn>F6</fn></key></keyarea>
+			<keyarea><key><kt>7 &amp;</kt><fn>F7</fn></key></keyarea>
+			<keyarea><key><kt>8 *</kt><fn>F8</fn></key></keyarea>
+			<keyarea><key><kt>9 (</kt><fn>F9</fn></key></keyarea>
+			<keyarea><key><kt>0 )</kt><fn>F10</fn></key></keyarea>
+			<keyarea><key><kt>- —</kt><fn>F11</fn></key></keyarea>
+			<keyarea><key><kt>= +</kt><fn>F12</fn></key></keyarea>
+			<keyarea class="x2"><key><kt>←</kt><fn></fn></key></keyarea>
+
+			<keyarea class="x15"><key><kt>Tab</kt><fn></fn></key></keyarea>
+			<screwarea><screw class="tab-q"></screw></screwarea>
+			<keyarea><key><kt>Q</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>W</kt><fn>↑</fn></key></keyarea>
+			<keyarea><key><kt>E</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>R</kt><fn>RGB</fn></key></keyarea>
+			<keyarea><key><kt>T</kt><fn>RAT</fn></key></keyarea>
+			<keyarea><key><kt>Y</kt><fn>BRT</fn></key></keyarea>
+			<keyarea><key><kt>U</kt><fn>MOD</fn></key></keyarea>
+			<keyarea><key><kt>I</kt><fn>↑</fn></key></keyarea>
+			<keyarea><key><kt>O</kt><fn>SL</fn></key></keyarea>
+			<keyarea><key><kt>P</kt><fn>PB</fn></key></keyarea>
+			<keyarea><key><kt>[ {</kt><fn>HM</fn></key></keyarea>
+			<keyarea><key><kt>] }</kt><fn>END</fn></key></keyarea>
+			<screwarea><screw class="rightbracket-backslash"></screw></screwarea>
+			<keyarea class="x15"><key><kt>\ ¦</kt><fn>PS</fn></key></keyarea>
+
+			<keyarea class="x175"><key><kt>Caps</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>A</kt><fn>←</fn></key></keyarea>
+			<keyarea><key><kt>S</kt><fn>↓</fn></key></keyarea>
+			<keyarea><key><kt>D</kt><fn>→</fn></key></keyarea>
+			<keyarea><key><kt>F</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>G</kt><fn></fn></key></keyarea>
+			<screwarea><screw class="y-h"></screw></screwarea>
+			<keyarea><key><kt>H</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>J</kt><fn>←</fn></key></keyarea>
+			<keyarea><key><kt>K</kt><fn>↓</fn></key></keyarea>
+			<keyarea><key><kt>L</kt><fn>→</fn></key></keyarea>
+			<keyarea><key><kt>; :</kt><fn>PU</fn></key></keyarea>
+			<keyarea><key><kt>' "</kt><fn>PD</fn></key></keyarea>
+			<keyarea class="x225"><key><kt>Enter</kt><fn></fn></key></keyarea>
+
+			<keyarea class="x225"><key class="g"><kt>Shift</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>Z</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>X</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>C</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>V</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>B</kt><fn>BT</fn></key></keyarea>
+			<keyarea><key><kt>N</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>M</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>, &lt;</kt><fn></fn></key></keyarea>
+			<keyarea><key><kt>. &gt;</kt><fn>INS</fn></key></keyarea>
+			<keyarea><key><kt>/ ?</kt><fn>DEL</fn></key></keyarea>
+			<screwarea><screw class="rightshift"></screw></screwarea>
+			<keyarea class="x275"><key class="g"><kt>Shift</kt><fn></fn></key></keyarea>
+
+			<keyarea class="x125"><key class="r"><kt>Ctrl</kt><fn></fn></key></keyarea>
+			<keyarea class="x125"><key class="y"><kt>Win</kt><fn>LOCK</fn></key></keyarea>
+			<keyarea class="x125"><key class="b"><kt>Alt</kt><fn></fn></key></keyarea>
+			<screwarea><screw class="space"></screw></screwarea>
+			<keyarea class="space"><key><kt>SPACE</kt><fn></fn></key></keyarea>
+			<keyarea class="x125"><key class="b"><kt>Alt</kt><fn></fn></key></keyarea>
+			<keyarea class="x125"><key class="y"><kt>FN</kt><fn></fn></key></keyarea>
+			<keyarea class="x125"><key class="y"><kt>Anne</kt><fn></fn></key></keyarea>
+			<keyarea class="x125"><key class="r"><kt>Ctrl</kt><fn></fn></key></keyarea>
+		</keyboard>
+		<script>
+			var kinput = document.title;
+			var keys = document.getElementsByTagName('key');
+			var keytexts = document.getElementsByTagName('kt');
+			for(var i = 0; i < keys.length; i++) {
+				switch (i) {
+					case 0:
+						keys[i].onclick = function() {
+							kinput = '';
+							update();
+						};
+						break;
+					case 13:
+						keys[i].onclick = function() {
+							kinput = kinput.substr(0, kinput.length - 1);
+							update();
+						};
+						break;
+					default:
+						keys[i].onclick = function() {
+							kinput += this.getElementsByTagName('kt')[0].innerHTML.split(' ')[0].toLowerCase();
+							update();
+						};
+						break;
+				}
+			}
+			function update(){
+				document.title = kinput;
+			}
+		</script>
+	</body>
+</html>
